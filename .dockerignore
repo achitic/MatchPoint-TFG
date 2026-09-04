@@ -1,0 +1,22 @@
+# Default-deny the large research repository. Re-include only backend runtime
+# inputs copied explicitly by Dockerfile.backend.
+**
+!Dockerfile.backend
+!requirements.lock
+!backend/
+!backend/**
+!matchpoint/
+!matchpoint/**
+!models/
+!models/**
+!data/
+!data/processed/
+!data/processed/**
+
+# Never send local/intermediate artefacts even if a future rule is broadened.
+.git/
+.venv/
+**/__pycache__/
+**/*.pyc
+frontend/node_modules/
+frontend/dist/

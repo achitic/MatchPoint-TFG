@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MatchPoint">
+  <rect width="64" height="64" rx="16" fill="#071411"/>
+  <circle cx="32" cy="32" r="21" fill="#b8ff32"/>
+  <path d="M14.5 25.5c8.8 1.2 15.4 8.8 15.4 17.9M49.5 38.5C40.7 37.3 34.1 29.7 34.1 20" fill="none" stroke="#071411" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,149 @@
+/* ================================================================== */
+/*  SKELETON LOADERS                                                   */
+/* ================================================================== */
+
+/* ── Shimmer animation ── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-block {
+  background: linear-gradient(
+    90deg,
+    rgba(34, 211, 238, 0.04) 0%,
+    rgba(34, 211, 238, 0.10) 40%,
+    rgba(167, 139, 250, 0.08) 60%,
+    rgba(34, 211, 238, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ── Container ── */
+.skeleton-container {
+  padding: 1.75rem;
+}
+
+/* ── Prediction skeleton ── */
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skeleton-badges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.skeleton-probability {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-player-card {
+  flex: 1;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(3, 7, 18, 0.5);
+  border-radius: 14px;
+}
+
+.skeleton-card-a {
+  border: 1px solid rgba(34, 211, 238, 0.12);
+}
+
+.skeleton-card-b {
+  border: 1px solid rgba(167, 139, 250, 0.12);
+}
+
+.skeleton-vs {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.skeleton-summary {
+  text-align: center;
+  padding: 1.25rem;
+  background: rgba(52, 211, 153, 0.03);
+  border: 1px solid rgba(52, 211, 153, 0.1);
+  border-radius: 10px;
+}
+
+/* ── Simulation skeleton ── */
+.skeleton-scoreboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(3, 7, 18, 0.4);
+  border-radius: 10px;
+}
+
+.skeleton-score-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.skeleton-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  background: rgba(3, 7, 18, 0.3);
+  border-radius: 8px;
+}
+
+/* ── Tournament skeleton ── */
+.skeleton-champion {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(251, 191, 36, 0.04);
+  border: 1px solid rgba(251, 191, 36, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-bracket {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-match-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  background: rgba(3, 7, 18, 0.4);
+  border-radius: 8px;
+}
+
+.skeleton-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skeleton-table-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: rgba(3, 7, 18, 0.25);
+  border-radius: 6px;
+}

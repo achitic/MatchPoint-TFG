@@ -1,0 +1,18 @@
+# MatchPoint backend runtime dependencies
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.0.0
+
+# Model inference and data access. The serialized estimators require their
+# training libraries to be importable when joblib loads them.
+numpy>=1.26.0
+pandas>=2.1.0
+scikit-learn==1.8.0
+catboost>=1.2.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+pyarrow>=15.0.0
+
+# Configuration and rate limiting
+python-dotenv>=1.0.0
+slowapi>=0.1.9

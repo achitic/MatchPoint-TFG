@@ -1,0 +1,361 @@
+/* ================================================================== */
+/*  HEAD-TO-HEAD                                                       */
+/* ================================================================== */
+.h2h-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(34, 211, 238, 0.1);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.h2h-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.h2h-title {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.h2h-toggle {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.h2h-loading,
+.h2h-empty {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding: 1rem 0;
+}
+
+/* ── Ratio Bar ── */
+.h2h-ratio {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.h2h-ratio-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.h2h-name-a {
+  color: var(--primary);
+  text-align: right;
+}
+
+.h2h-name-b {
+  color: var(--accent);
+  text-align: left;
+}
+
+.h2h-ratio-bar-wrap {
+  flex: 1;
+}
+
+.h2h-ratio-bar {
+  display: flex;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.h2h-ratio-fill-a {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  transition: none;
+}
+
+.h2h-ratio-fill-b {
+  background: linear-gradient(90deg, #7c3aed, var(--accent));
+  transition: none;
+}
+
+.h2h-ratio-counts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+}
+
+.h2h-count-a { color: var(--primary); font-weight: 700; }
+.h2h-count-b { color: var(--accent); font-weight: 700; }
+.h2h-total   { color: var(--text-muted); }
+
+/* ── Surface breakdown ── */
+.h2h-surfaces {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.h2h-surface-row {
+  display: grid;
+  grid-template-columns: 70px 28px 1fr 28px;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.h2h-surf-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.h2h-surf-a {
+  text-align: right;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--primary);
+}
+
+.h2h-surf-b {
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.h2h-surf-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(167, 139, 250, 0.2);
+  overflow: hidden;
+}
+
+.h2h-surf-fill-a {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  transition: none;
+}
+
+/* ── Match table ── */
+.h2h-matches {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+.h2h-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.h2h-table th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.1);
+}
+
+.h2h-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.05);
+  color: var(--text-muted);
+}
+
+.h2h-row-a td { border-left: 2px solid rgba(34, 211, 238, 0.3); }
+.h2h-row-b td { border-left: 2px solid rgba(167, 139, 250, 0.3); }
+
+.h2h-winner { font-weight: 600; color: var(--text); }
+.h2h-tournament { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.h2h-score { font-family: var(--font-mono); }
+
+/* ================================================================== */
+/*  MODEL COMPARISON                                                   */
+/* ================================================================== */
+.model-comparison-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.model-comparison-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.model-comparison-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.model-comparison-intro {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.model-comparison-intro p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.model-comparison-loading {
+  text-align: center;
+  padding: 1.25rem 0;
+}
+
+.model-comparison-loading p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+.compare-run-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(167, 139, 250, 0.07));
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  color: var(--accent);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.mc-model-name {
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mc-model-name svg {
+  display: inline-block;
+  margin-inline-end: 0.35rem;
+  vertical-align: -0.18em;
+}
+
+.compare-run-btn:hover {
+  background: rgba(167, 139, 250, 0.22);
+  border-color: rgba(167, 139, 250, 0.5);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.12);
+}
+
+.model-comparison-table-wrap {
+  overflow-x: auto;
+}
+
+.model-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.model-comparison-table th {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.12);
+  text-align: center;
+}
+
+.model-comparison-table th:first-child { text-align: left; }
+
+.model-comparison-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.mc-model-name {
+  text-align: left !important;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.mc-prob { font-family: var(--font-mono); font-weight: 600; }
+.mc-prob-a { color: var(--primary); }
+.mc-prob-b { color: var(--accent); }
+
+.mc-bar-cell { min-width: 120px; }
+
+.mc-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mc-bar-a {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  transition: none;
+}
+
+.mc-bar-b {
+  background: linear-gradient(90deg, #7c3aed, var(--accent));
+  transition: none;
+}
+
+.mc-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.mc-badge-a {
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.mc-badge-b {
+  background: rgba(167, 139, 250, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.mc-row-fav-a td:first-child { border-left: 2px solid rgba(34, 211, 238, 0.3); }
+.mc-row-fav-b td:first-child { border-left: 2px solid rgba(167, 139, 250, 0.3); }
+
+.mc-row-consensus {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mc-row-consensus .mc-model-name {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.mc-row-error td { color: var(--error); font-size: 0.78rem; }

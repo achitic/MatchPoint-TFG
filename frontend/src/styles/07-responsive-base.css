@@ -1,0 +1,45 @@
+/* ================================================================== */
+/*  RESPONSIVE                                                         */
+/* ================================================================== */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .probability-display {
+    flex-direction: column;
+  }
+
+  .vs-divider {
+    padding: 0.5rem 0;
+  }
+
+  .debug-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .explain-table {
+    font-size: 0.68rem;
+  }
+
+  .explain-table th,
+  .explain-table td {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .mode-tabs {
+    flex-direction: column;
+  }
+
+  .mode-tab {
+    width: 100%;
+  }
+
+  .live-score {
+    font-size: 0.85rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.75rem;
+  }
+}

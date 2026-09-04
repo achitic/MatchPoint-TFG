@@ -1,0 +1,55 @@
+/* ================================================================== */
+/*  CONFIDENCE GAUGE                                                   */
+/* ================================================================== */
+.confidence-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 1rem;
+  margin-top: 1.25rem;
+  background: rgba(3, 7, 18, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+}
+
+.gauge-svg-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.gauge-svg {
+  overflow: visible;
+  width: min(100%, 200px);
+  height: auto;
+}
+
+.gauge-pct-text {
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.gauge-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.gauge-label {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.gauge-description {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.4;
+}

@@ -1,0 +1,4 @@
+# Compatibility entrypoint for local development.
+# Direct dependencies live in requirements*.in; exact reproducible versions
+# (including hashes) are generated in requirements*.lock.
+-r requirements-dev.lock

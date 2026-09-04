@@ -1,0 +1,31 @@
+# Dockerfile.backend — MatchPoint FastAPI backend
+FROM python:3.13-slim@sha256:7ce4b6dfe35e55397b7cda544f8a13f191b7ae28dc5aad71fe664dbc9bc2623f
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+
+# Install the exact, hash-verified Linux dependency set first (layer cache).
+COPY requirements.lock ./
+RUN pip install --no-cache-dir --require-hashes -r requirements.lock
+
+# The runtime image contains only the API, inference package, trained models and
+# processed data needed by the application.
+COPY backend ./backend
+COPY matchpoint ./matchpoint
+COPY models ./models
+COPY data/processed ./data/processed
+
+RUN groupadd --system matchpoint \
+    && useradd --system --gid matchpoint --home-dir /app matchpoint \
+    && chown -R matchpoint:matchpoint /app
+
+USER matchpoint
+
+# Expose port
+EXPOSE 8000
+
+# Start uvicorn
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]

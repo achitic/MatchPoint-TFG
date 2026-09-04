@@ -1,0 +1,16 @@
+{
+  "feature_names": [
+    "elo_p_global"
+  ],
+  "fillna_value": 0,
+  "source": "Baseline ELO global + augmentación simétrica por partido",
+  "n_features": 1,
+  "elo_scale": 400.0,
+  "temporal_protocol": "train<=2021; validation=2022-2023; test=2024",
+  "metrics_test": {
+    "accuracy": 0.6203703703703703,
+    "log_loss": 0.6436694557930683,
+    "auc": 0.6745580609199936,
+    "brier": 0.2265060059389035
+  }
+}

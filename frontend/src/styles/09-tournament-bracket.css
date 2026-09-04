@@ -1,0 +1,94 @@
+/* ================================================================== */
+/*  TOURNAMENT BRACKET                                                   */
+/* ================================================================== */
+.tournament-bracket-section {
+  margin-bottom: 1.5rem;
+}
+
+.tournament-view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.view-toggle-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  background: rgba(3, 7, 18, 0.4);
+  color: var(--text-muted);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.view-toggle-btn.active {
+  background: rgba(34, 211, 238, 0.1);
+  border-color: rgba(34, 211, 238, 0.35);
+  color: var(--primary);
+}
+
+.view-toggle-btn:hover:not(.active) {
+  background: rgba(34, 211, 238, 0.04);
+  color: var(--text);
+}
+
+.tournament-bracket {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bracket-headers {
+  display: grid;
+  margin-left: 8px;
+  margin-bottom: 0.5rem;
+  width: max-content;
+}
+
+.bracket-round-header {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.bracket-svg-container {
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bracket-svg {
+  display: block;
+  max-width: none;
+}
+
+.bracket-champion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid rgba(234, 179, 8, 0.25);
+  border-radius: 10px;
+}
+
+.bracket-champion-icon {
+  display: inline-flex;
+  color: var(--warning);
+}
+
+.bracket-champion-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  color: #eab308;
+  text-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+}

@@ -1,0 +1,310 @@
+/* ================================================================== */
+/*  18 — LIVE IN-PLAY MATCH TRACKER                                    */
+/* ================================================================== */
+
+/* ── Scorecard Widget ────────────────────────────────────────────── */
+.live-score-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(34, 211, 238, 0.12);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeInUp 0.35s ease-out;
+}
+
+.live-score-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.live-score-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.live-status-badge {
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.live-status-badge.live {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    color: var(--error);
+    animation: pulse-live 1.5s infinite;
+}
+
+.live-status-badge.finished {
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: var(--success);
+}
+
+@keyframes pulse-live {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* ── Score Grid ──────────────────────────────────────────────────── */
+.live-score-grid {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.live-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 64px 64px;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.live-grid-row:last-child {
+    border-bottom: none;
+}
+
+.live-grid-row.header {
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+}
+
+.live-grid-row.winner {
+    background: rgba(52, 211, 153, 0.03);
+    color: var(--text);
+    font-weight: 700;
+}
+
+.col-p {
+    font-family: var(--font-sans);
+    font-weight: 600;
+}
+
+.col-s, .col-g {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.col-s {
+    color: var(--primary);
+}
+
+.col-g {
+    color: var(--text-muted);
+}
+
+.live-grid-row.winner .col-p {
+    color: var(--success);
+}
+
+/* ── Game logging ────────────────────────────────────────────────── */
+.live-log-fields {
+    margin-bottom: 0.5rem;
+}
+
+.live-action-buttons {
+    margin-top: 0.5rem;
+}
+
+.live-point-score {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 0.3rem;
+}
+
+.live-point-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    min-height: 130px;
+    padding: 0.9rem;
+    border: 1px solid rgba(34, 211, 238, 0.16);
+    border-radius: 11px;
+    background: rgba(34, 211, 238, 0.045);
+    text-align: center;
+}
+
+.live-point-player.returner {
+    border-color: rgba(167, 139, 250, 0.18);
+    background: rgba(167, 139, 250, 0.045);
+}
+
+.live-point-role {
+    color: var(--text-dim);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.live-point-player strong {
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.live-point-value {
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.live-point-player.returner .live-point-value {
+    color: var(--accent);
+}
+
+.live-point-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    min-width: 145px;
+    padding: 0.75rem;
+    color: var(--text-dim);
+    text-align: center;
+}
+
+.live-point-status > span {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.live-point-status strong {
+    color: var(--text);
+    font-size: 0.82rem;
+}
+
+.live-point-status small {
+    color: var(--text-dim);
+    font-size: 0.68rem;
+}
+
+.live-point-score.is-tiebreak .live-point-value {
+    color: var(--warning);
+}
+
+.live-point-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 0.65rem;
+    margin-top: 0.75rem;
+}
+
+.live-point-btn,
+.live-point-undo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-height: 42px;
+    padding: 0.65rem 0.8rem;
+    border-radius: 9px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.18s, background-color 0.18s, border-color 0.18s;
+}
+
+.live-point-btn.server {
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    background: rgba(34, 211, 238, 0.09);
+    color: var(--primary);
+}
+
+.live-point-btn.returner {
+    border: 1px solid rgba(167, 139, 250, 0.28);
+    background: rgba(167, 139, 250, 0.09);
+    color: var(--accent);
+}
+
+.live-point-undo {
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--text-dim);
+}
+
+.live-point-btn:hover:not(:disabled),
+.live-point-undo:hover:not(:disabled) {
+    transform: translateY(-1px);
+    border-color: currentColor;
+}
+
+.live-point-btn:disabled,
+.live-point-undo:disabled {
+    cursor: not-allowed;
+    opacity: 0.42;
+}
+
+.live-point-help {
+    margin: 0.65rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.live-chart-canvas-wrap {
+    background: rgba(3, 7, 18, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .live-panel-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .live-point-score {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .live-point-status {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        min-width: 0;
+        min-height: 72px;
+    }
+
+    .live-point-actions {
+        grid-template-columns: 1fr;
+    }
+}

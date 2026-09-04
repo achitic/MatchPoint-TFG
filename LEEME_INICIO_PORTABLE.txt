@@ -1,0 +1,28 @@
+MATCHPOINT - INICIO EN CUALQUIER ORDENADOR
+==========================================
+
+Requisito unico:
+- Docker Desktop (Windows/macOS) o Docker Engine con Compose (Linux).
+- Conexion a Internet durante el primer inicio para descargar las imagenes.
+
+Windows:
+1. Copia la carpeta completa del proyecto al ordenador.
+2. Instala y abre Docker Desktop.
+3. Haz doble clic en INICIAR_MATCHPOINT_WINDOWS.cmd.
+4. Para apagarlo, usa DETENER_MATCHPOINT_WINDOWS.cmd.
+
+macOS o Linux:
+1. Copia la carpeta completa del proyecto al ordenador.
+2. Instala e inicia Docker.
+3. Abre una terminal dentro de la carpeta y ejecuta:
+   chmod +x iniciar_matchpoint_mac_linux.sh detener_matchpoint_mac_linux.sh
+   ./iniciar_matchpoint_mac_linux.sh
+4. Para apagarlo:
+   ./detener_matchpoint_mac_linux.sh
+
+La aplicacion se abre en http://localhost.
+
+IMPORTANTE:
+- Hay que copiar la carpeta MatchPoint completa, no solamente el lanzador.
+- Las rutas son relativas: no importa el nombre de usuario ni donde se guarde.
+- No hace falta instalar Python, Node.js ni las dependencias del proyecto.

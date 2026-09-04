@@ -1,0 +1,221 @@
+/* ================================================================== */
+/*  REACT ROUTER — Header back link                                     */
+/* ================================================================== */
+.header-back-link {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s;
+  font-family: var(--font-sans);
+}
+
+.header-back-link:hover {
+  color: var(--primary);
+}
+
+.app-header {
+  position: relative;
+}
+
+/* ================================================================== */
+/*  SIMULATION HISTORY                                                  */
+/* ================================================================== */
+.sim-history {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.sim-history-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.sim-history-toggle:hover {
+  background: rgba(34, 211, 238, 0.04);
+  color: var(--text);
+}
+
+.sim-history-icon {
+  font-size: 1rem;
+}
+
+.sim-history-chevron {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.sim-history-list {
+  border-top: 1px solid rgba(34, 211, 238, 0.06);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.sim-history-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.04);
+  color: var(--text);
+  font-family: var(--font-sans);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.sim-history-entry:hover {
+  background: rgba(34, 211, 238, 0.05);
+}
+
+.sim-history-players {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sim-history-winner {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.sim-history-vs {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sim-history-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.sim-history-sets {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.sim-history-surface {
+  color: var(--primary);
+}
+
+.sim-history-date {
+  margin-left: auto;
+}
+
+/* ================================================================== */
+/*  MOMENTUM CHART                                                       */
+/* ================================================================== */
+.momentum-chart {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.momentum-chart h4 {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-sans);
+}
+
+.momentum-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.momentum-players-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.legend-a {
+  color: var(--primary);
+}
+
+.legend-b {
+  color: var(--accent);
+}
+
+.legend-a,
+.legend-b {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.momentum-legend-swatch {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.momentum-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+}
+
+.momentum-chart--empty {
+  text-align: center;
+}
+
+.momentum-hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.momentum-set-labels {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.momentum-set-label {
+  font-family: var(--font-mono);
+}

@@ -1,0 +1,18 @@
+{
+  "feature_names": [
+    "elo_p_global",
+    "elo_p_surface",
+    "elo_p_blended"
+  ],
+  "fillna_value": 0,
+  "source": "ELO global, superficie y blended + augmentación simétrica por partido",
+  "n_features": 3,
+  "elo_scale": 400.0,
+  "temporal_protocol": "train<=2021; validation=2022-2023; test=2024",
+  "metrics_test": {
+    "accuracy": 0.628221377270807,
+    "log_loss": 0.6394293662152691,
+    "auc": 0.6819798046973515,
+    "brier": 0.22453463712266689
+  }
+}

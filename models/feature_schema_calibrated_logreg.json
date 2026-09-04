@@ -1,0 +1,38 @@
+{
+  "feature_names": [
+    "elo_p_global",
+    "elo_p_surface",
+    "elo_p_blended",
+    "w_last5_ratio",
+    "l_last5_ratio",
+    "h2h_total",
+    "h2h_ratio",
+    "h2h_surface_total",
+    "h2h_surface_ratio",
+    "w_rest_days",
+    "l_rest_days",
+    "w_recent_form",
+    "l_recent_form",
+    "w_serve_pct",
+    "l_serve_pct",
+    "w_bp_save_pct",
+    "l_bp_save_pct",
+    "w_dominance",
+    "l_dominance",
+    "serve_pct_diff",
+    "bp_save_pct_diff",
+    "dominance_diff",
+    "age_diff"
+  ],
+  "note": "CORE_CALIBRATED: LR + Isotonic calibrado temporalmente (fit base en train, calibraciÃ³n en val)",
+  "elo_scale": 400.0,
+  "calibration_method": "isotonic",
+  "base_model": "LogisticRegression(C=0.1) with reduced collinearity feature set",
+  "temporal_protocol": "train<=2021 -> calibrate=2022-2023 -> test=2024",
+  "metrics_test": {
+    "accuracy": 0.6348049570483031,
+    "log_loss": 0.6352276723945065,
+    "auc": 0.6881835792499718,
+    "brier": 0.22268860661995177
+  }
+}
